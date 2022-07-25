@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./components/map/map.module').then(m => m.MapModule)
   },
   { path: '**', component: PageNotFoundComponent },
-  { path: '',   redirectTo: '/', pathMatch: 'full' }
+  { path: '',   redirectTo: 'index', pathMatch: 'full' }
 ];
 
 @NgModule({

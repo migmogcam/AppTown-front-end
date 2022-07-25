@@ -1,0 +1,28 @@
+body {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+div {
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+}
+
+.number {
+  background-color: transparent;
+  position: relative;
+  font: 900 30vmin "Consolas";
+  letter-spacing: 4vmin;
+  text-shadow: -4px 2px 14px #0FA7BD;
+}
+
+.text {
+  font: 400 5vmin "Courgette";
+}
+.text span {
+  font-size: 10vmin;
+}
