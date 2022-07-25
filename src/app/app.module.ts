@@ -10,6 +10,7 @@ import { MaterialImportsModule } from './material-imports/material-imports.modul
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
 import { MapComponent } from './components/map/map.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     NgbModule,
     BrowserAnimationsModule,
     MatNativeDateModule,
-    MaterialImportsModule
+    MaterialImportsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

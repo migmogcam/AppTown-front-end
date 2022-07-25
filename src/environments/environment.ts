@@ -3,8 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
-};
+  production: false,
+  microserviceHOST: 'http://localhost:7000',
+  microserviceURL: '/apiv1/places',
+  userName: 'admin',
+  passWord: '$Up3R_P4ssw0rd'};
 
 /*
  * For easier debugging in development mode, you can import the following file
