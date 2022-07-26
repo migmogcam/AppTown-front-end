@@ -23,15 +23,14 @@ export class RestaurantsComponent implements OnInit {
     placeFilter.language = '';
     placeFilter.pagetoken = '';
 
-    this.mapPlacesService.getPlaces(placeFilter).subscribe(
-      (data) => {
-        this.resultado = data.results;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    this.mapPlacesService.getPlaces(placeFilter).subscribe({
+      next: (v) => this.resultado = v.results,
+      error: (e) => console.error(e),
+      complete: () => console.info('complete getPlaces')
 
+    });
   }
+
+
 
 }

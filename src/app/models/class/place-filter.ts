@@ -1,4 +1,4 @@
-import { IPlaceFilter } from "../interface/place-filter";
+import { IPlaceFilter } from "../interface/iplace-filter";
 
 export class PlaceFilter implements IPlaceFilter {
   public location: string;
