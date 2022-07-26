@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlaceFilter } from 'src/app/models/class/place-filter';
+import { IPlaceItem } from 'src/app/models/interface/iplace-item';
+import { IPlaceResult } from 'src/app/models/interface/Iplace-result';
 import { MapPlacesService } from 'src/app/services/map-places.service';
 
 @Component({
@@ -11,7 +13,7 @@ export class RestaurantsComponent implements OnInit {
 
   constructor(private mapPlacesService : MapPlacesService) { }
 
-  resultado : any;
+  resultado : IPlaceItem[] = [];
 
   ngOnInit(): void {
 
