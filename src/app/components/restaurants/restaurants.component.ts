@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlaceFilter } from 'src/app/models/class/place-filter';
+import { IPhotoFilter } from 'src/app/models/interface/iphoto-filter';
 import { IPlaceItem } from 'src/app/models/interface/iplace-item';
-import { IPlaceResult } from 'src/app/models/interface/Iplace-result';
 import { MapPlacesService } from 'src/app/services/map-places.service';
 
 @Component({
@@ -20,7 +20,7 @@ export class RestaurantsComponent implements OnInit {
     let placeFilter : PlaceFilter = new PlaceFilter();
     placeFilter.location = '37.893162,-6.563482';
     placeFilter.radius = '2000';
-    placeFilter.type = '';
+    placeFilter.type = 'restaurant';
     placeFilter.keyword = '';
     placeFilter.language = '';
     placeFilter.pagetoken = '';
@@ -31,6 +31,17 @@ export class RestaurantsComponent implements OnInit {
       complete: () => console.info('complete getPlaces')
 
     });
+  }
+
+  async getPhoto(item : IPlaceItem) {
+    let photo = item.photos ? item.photos[0] : null;
+    let photoFilter : IPhotoFilter = {
+      photoReference: photo?.photo_reference || '',
+      photoWith: photo?.width?.toString() || '',
+      photoHeight: photo?.height?.toString() || ''
+    };
+
+    return await this.mapPlacesService.getPhoto(photoFilter);
   }
 
 

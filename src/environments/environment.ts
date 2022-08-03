@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   microserviceHOST: 'http://localhost:7000',
-  microserviceURL: '/apiv1/places',
+  microservicePlaceURL: '/apiv1/places',
+  microservicePhotoURL: '/apiv1/places/photo',
   userName: 'admin',
   passWord: '$Up3R_P4ssw0rd'};
 
