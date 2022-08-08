@@ -5,31 +5,29 @@ import { IPlaceItem } from 'src/app/models/interface/iplace-item';
 import { MapPlacesService } from 'src/app/services/map-places.service';
 
 @Component({
-  selector: 'app-restaurants',
-  templateUrl: './restaurants.component.html',
-  styleUrls: ['./restaurants.component.scss']
+  selector: 'app-pharmacy',
+  templateUrl: './pharmacy.component.html',
+  styleUrls: ['./pharmacy.component.scss']
 })
-export class RestaurantsComponent implements OnInit {
+export class PharmacyComponent implements OnInit {
 
-  constructor(private mapPlacesService : MapPlacesService) { }
+  constructor(private mapPlacesService: MapPlacesService) { }
 
-  resultado : IPlaceItem[] = [];
-
-  displayedColumns: string[] = ['data'];
+  resultado: IPlaceItem[] = [];
 
   ngOnInit(): void {
 
-    let placeFilter : PlaceFilter = new PlaceFilter();
+    let placeFilter: PlaceFilter = new PlaceFilter();
     placeFilter.location = '37.893162,-6.563482';
     placeFilter.radius = '2000';
-    placeFilter.type = 'restaurant';
+    placeFilter.type = 'pharmacy';
     placeFilter.keyword = '';
     placeFilter.language = '';
     placeFilter.pagetoken = '';
 
     this.mapPlacesService.getPlaces(placeFilter).subscribe({
       next: (v) => {
-        for(let i = 0; i < v.results.length; i++){
+        for (let i = 0; i < v.results.length; i++) {
           this.getPhoto(v.results[i]).then(
             (value) => {
               v.results[i].mainPhotoURL = value;
@@ -44,9 +42,9 @@ export class RestaurantsComponent implements OnInit {
     });
   }
 
-  async getPhoto(item : IPlaceItem) {
+  async getPhoto(item: IPlaceItem) {
     let photo = item.photos ? item.photos[0] : null;
-    let photoFilter : IPhotoFilter = {
+    let photoFilter: IPhotoFilter = {
       photoReference: photo?.photo_reference || '',
       photoWith: photo?.width?.toString() || '',
       photoHeight: photo?.height?.toString() || ''

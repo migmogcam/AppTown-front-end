@@ -13,6 +13,7 @@ export interface IPlaceItem {
   name? : string;
   opening_hours? : IOpeningHours;
   photos? : Array<IPlacePhoto>;
+  mainPhotoURL? : string;
   price_level? : PriceEnum;
   url? : string;
   website? : string;

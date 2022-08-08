@@ -11,6 +11,8 @@ import { RestaurantsComponent } from './components/restaurants/restaurants.compo
 import { MapComponent } from './components/map/map.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PharmacyComponent } from './components/pharmacy/pharmacy.component';
+import { SuperMarketComponent } from './components/super-market/super-market.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     RestaurantsComponent,
     MapComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PharmacyComponent,
+    SuperMarketComponent
   ],
   imports: [
     BrowserModule,
